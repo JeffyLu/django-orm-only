@@ -5,16 +5,15 @@ import sys
 import django
 from django.conf import settings
 
-# current path
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# folder to create tables
+
 INSTALLED_APPS = [
     'db',
 ]
 
-# database settings 
-# sqlite3 version
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -22,25 +21,23 @@ DATABASES = {
     }
 }
 
-# mysql version
-#DATABASES = {
-#    'default': {
-#        'ENGINE' : 'django.db.backends.mysql',
-#        'NAME' : 'test',
-#        'USER' : 'root',
-#        'PASSWORD' : 'root',
-#        'HOST' : 'localhost',
-#        'PORT' : '3306',
-#    }
-#}
 
-# configure
+# DATABASES = {
+#     'default': {
+#         'ENGINE' : 'django.db.backends.mysql',
+#         'NAME' : 'test',
+#         'USER' : 'root',
+#         'PASSWORD' : 'root',
+#         'HOST' : 'localhost',
+#         'PORT' : '3306',
+#     }
+# }
+
 settings.configure(
     INSTALLED_APPS = INSTALLED_APPS,
     DATABASES = DATABASES,
 )
 
-# setup
 django.setup()
 
 if __name__ == "__main__":
